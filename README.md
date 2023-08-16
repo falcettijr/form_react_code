@@ -1,6 +1,6 @@
 # Consulta de CEP e preenchimento automático
 >
->Formulário para consulta de CEP, utilizando a API do ViaCEP.
+>Formulário para consulta de CEP, utilizando a API do ViaCEP feito em REACT
 
 ## Screenshot
 
