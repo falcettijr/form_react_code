@@ -24,17 +24,15 @@ const handleSubmit = (e) => {
     setBairro("");
     setUf("");
     setLocalidade("");
-    
 }
 
-
 console.log(cep, rua, numero, complemento, bairro, uf, localidade)
-
 
 return (
     <form onSubmit={handleSubmit}>
         <div>
-        <h1>Formulário React Code n APP</h1>
+        <img src="/logo.svg" alt="" />
+        <h1>Formulário React - Code</h1>
                 <label>
                     <span>CEP</span>
                     <input type="text" name="cep" placeholder="Digite seu cep" onChange={(e) => setCep(e.target.value)} value={cep || ""}/>
@@ -62,17 +60,21 @@ return (
 
                 <label>
                     <span>UF</span>
-                    <input type="text" name="uf" placeholder="Digite seu estado" onChange={(e) => setUf(e.target.value)} value={uf || ""}/>
+                    <select type="text" name="uf" placeholder="Digite seu estado" onChange={(e) => setUf(e.target.value)} value={uf || ""}></select>
                 </label>
 
                 <label>
                     <span>LOCALIDADE</span>
-                    <input type="text" name="localidade" placeholder="Digite sua cidade" onChange={(e) => setLocalidade(e.target.value)} value={localidade || ""}/>
+                    <select type="text" name="localidade" placeholder="Digite sua cidade" onChange={(e) => setLocalidade(e.target.value)} value={localidade || ""}/><select/>
                 </label>
                 <input type="submit" value="Enviar" />
         </div>
     </form>
 )
 }
+
+
+//value do option tem que ser ao id do estado ou da cidade não pode ser o nome
+
 
 export default Form
