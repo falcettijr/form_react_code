@@ -47,7 +47,7 @@ select {
     margin-bottom: 20px;
 }
 
-input[type="button"], #prosseguir {
+input[type="submit"] {
     width: 100%;
     padding: 10px;
     background-color: #4556a0;
@@ -57,7 +57,7 @@ input[type="button"], #prosseguir {
     cursor: pointer;
 }
 
-button, input[type="button"], #limpar {
+button, input[type="submit"], #limpar {
     width: 100%;
     padding: 10px;
     background-color: #99645a;
@@ -67,11 +67,11 @@ button, input[type="button"], #limpar {
     cursor: pointer;
 }
 
-button, input[type="button"], #limpar:hover {
+button, input[type="submit"], #limpar:hover {
     background-color: #cf250f;
 }
 
-input[type="button"],#prosseguir:hover {
+input[type="submit"],#prosseguir:hover {
     background-color: #0e29a5;
 
 }

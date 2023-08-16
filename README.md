@@ -1,8 +1,53 @@
-# React + Vite
+# Consulta de CEP e preenchimento automático
+>
+>Formulário para consulta de CEP, utilizando a API do ViaCEP.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Screenshot
 
-Currently, two official plugins are available:
+![Screenshot](screenshot.png#vitrinedev)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Índice
+
+- [Funcionalidades](#funcionalidades)
+- [Tecnologias](#tecnologias)
+- [O que aprendi](#o-que-aprendi)
+- [Contribuições](#contribuições)
+- [Autor](#autor)
+- [Licença](#licença)
+
+## Funcionalidades
+
+- Ao editar o campo e sair dele deverá consultar a API ViaCEP <https://viacep.com.br/>.
+- Preencher o campos seguintes com os dados retornados pela consulta.
+- Ao digitar o texto, é aplicado uma máscara de formato 00000-000.
+- Ao editar o campo de cep e sair dele consulta a API ViaCEP( <https://viacep.com.br/>).
+- Preenche os campos automaticamente
+
+## Tecnologias
+
+- HTML
+- CSS
+- Javascript (JSX)
+- REACT
+
+## O que aprendi
+
+- Meu primeiro projeto em React, feito como parte do treinamento em React
+
+### Uso do FETCH API
+
+## Contribuições
+
+Contribuições são sempre bem-vindas. Sinta-se à vontade para abrir uma issue ou enviar um pull request se tiver alguma sugestão de melhoria ou adição ao projeto.
+
+## Autor
+
+### Sergio Falcetti
+
+- [Linkedin](https://github.com/falcettijr)
+- [GitHub](https://www.linkedin.com/in/sergiofalcetti/)
+- [FrontEnd Mentor](https://www.frontendmentor.io/profile/falcettijr)
+
+## Licença
+
+Este projeto está licenciado sob a licença [MIT](https://opensource.org/licenses/MIT).
