@@ -1,32 +1,42 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import "./Form.css"
+
+const url = "https://gist.githubusercontent.com/letanure/3012978/raw/6938daa8ba69bcafa89a8c719690225641e39586/estados-cidades.json"
 
 const Form = () => {
 
-const [cep, setCep] = useState("");
+const[cep, setCep] = useState("");
 const[rua, setRua] = useState(""); 
 const[numero, setNumero] = useState("");
 const[complemento, setComplemento] = useState("");
 const[bairro, setBairro] = useState("");
-const[uf, setUf] = useState("");
-const[localidade, setLocalidade] = useState("");
+const[estados, setEstados] = useState([]);
+const[cidades, setCidades] = useState([]);
 
+useEffect(() => {
+
+    async function getData() {
+    const res = await fetch(url)
+    const data = await res.json()
+    setEstados(data.estados)
+    setCidades(data.cidades)
+    }
+    
+    getData() 
+}, [])
 
 const handleSubmit = (e) => {
     e.preventDefault()
     
-    console.log(cep, rua, numero, complemento, bairro, uf, localidade)
-
     setCep("");
     setRua("");
     setNumero("");
     setComplemento("");
     setBairro("");
-    setUf("");
-    setLocalidade("");
+    setEstados("");
+    setCidades("");
 }
 
-console.log(cep, rua, numero, complemento, bairro, uf, localidade)
 
 return (
     <form onSubmit={handleSubmit}>
@@ -59,22 +69,25 @@ return (
                 </label>
 
                 <label>
-                    <span>UF</span>
-                    <select type="text" name="uf" placeholder="Digite seu estado" onChange={(e) => setUf(e.target.value)} value={uf || ""}></select>
+                    <span>ESTADO</span>
+                    <select type="text" name="estado" placeholder="Digite seu estado" onChange={(e) => setEstados(e.target.value)} value={estados || ""}>
+                    {estados.map((estado, i) =>(
+                    <option key={`estado-${i}`} value={estado.nome}>{estado.nome}</option>
+                    ))}
+                    </select>
                 </label>
 
                 <label>
                     <span>LOCALIDADE</span>
-                    <select type="text" name="localidade" placeholder="Digite sua cidade" onChange={(e) => setLocalidade(e.target.value)} value={localidade || ""}/><select/>
+                    <select type="text" name="cidade" placeholder="Digite sua cidade" onChange={(e) => setCidades(e.target.value)} value={cidades || ""}></select>
                 </label>
+
                 <input type="submit" value="Enviar" />
         </div>
     </form>
 )
 }
 
-
 //value do option tem que ser ao id do estado ou da cidade não pode ser o nome
-
 
 export default Form
